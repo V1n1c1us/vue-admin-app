@@ -38,11 +38,11 @@
                     label="Password Confirmation"
                     type="password"
                   ></v-text-field>                  
-                  <v-text-field
+                  <input
                     prepend-icon="camera_enhance"
                     type="file"
                     @change="uploadImage"
-                  ></v-text-field>
+                  />
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -85,11 +85,12 @@ export default {
     },
     methods: {
         uploadImage(e){
-            let arquivo = e.target.files || e.dataTransfer.files
-            console.log(arquivo)
+            let file = e.target.files || e.dataTransfer.files
+            console.log(file)
         },
         register() {
-            axios.post('http://register.test/api/register', {
+            const URL_API = "http://laravel-register-app.test/api/create";
+            axios.post('http://laravel-register-app.test/api/create', {
                 name: this.usuario.name,
                 email: this.usuario.email,
                 password: this.usuario.password,

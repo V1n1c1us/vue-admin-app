@@ -28,7 +28,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
+                <v-btn color="primary" @click="login()">Login</v-btn>
                 <v-btn color="success" to="/register">Register</v-btn>
               </v-card-actions>
             </v-card>
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     login() {
-      const URL_API = "http://register.test/api/login";
+      const URL_API = "http://laravel-register-app.test/api/login";
 
       axios
         .post(URL_API, {
