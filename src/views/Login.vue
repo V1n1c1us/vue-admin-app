@@ -28,7 +28,8 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="login()">Login</v-btn>
+                <v-btn color="primary">Login</v-btn>
+                <v-btn color="success" to="/register">Register</v-btn>
               </v-card-actions>
             </v-card>
             <vue-element-loading
@@ -59,7 +60,8 @@ export default {
         email: "",
         password: ""
       },
-      isActive: false
+      isActive: false,
+      registerActive: false
     };
   },
   methods: {
@@ -106,6 +108,9 @@ export default {
             type: "info"
           });*/
         });
+    },
+    register() {
+
     }
   }
 };
